@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.github.oshi', name: 'oshi-core', version: '3.10.0'
+
+}
+
+wrapper {
+    gradleVersion = '5.0'
+}
