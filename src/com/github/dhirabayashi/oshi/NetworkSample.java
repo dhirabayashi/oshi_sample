@@ -7,42 +7,34 @@ import java.util.Arrays;
 
 public class NetworkSample {
     public static void main(String[] args) {
-        SystemInfo si = new SystemInfo();
+        var si = new SystemInfo();
         var hard = si.getHardware();
         var ifs = hard.getNetworkIFs();
         for(NetworkIF net : ifs) {
-            puts("DisplayName: " + net.getDisplayName());
-            puts("IPv4addr: " + Arrays.asList(net.getIPv4addr()));
-            puts("IPv6addr: " + Arrays.asList(net.getIPv6addr()));
-            puts("Macaddr: " + net.getMacaddr());
-            puts("Name: " + net.getName());
-            puts("NetworkInterface: " + net.getNetworkInterface());
-            puts("DisplayName: " + net.getNetworkInterface().getDisplayName());
-            puts("HostName: " + net.getNetworkInterface().getInetAddresses().nextElement().getHostName());
-            puts("CanonicalHastName: " + net.getNetworkInterface().getInetAddresses().nextElement().getCanonicalHostName());
-            puts("HostAddress: " + net.getNetworkInterface().getInetAddresses().nextElement().getHostAddress());
-            puts("InterfaceAddresses: " + net.getNetworkInterface().getInterfaceAddresses());
-            puts("NetworkInterface Name: " + net.getNetworkInterface().getName());
+            System.out.println("DisplayName: " + net.getDisplayName());
+            System.out.println("IPv4addr: " + Arrays.asList(net.getIPv4addr()));
+            System.out.println("IPv6addr: " + Arrays.asList(net.getIPv6addr()));
+            System.out.println("Macaddr: " + net.getMacaddr());
+            System.out.println("Name: " + net.getName());
+            System.out.println("NetworkInterface: " + net.getNetworkInterface());
+            System.out.println("DisplayName: " + net.getNetworkInterface().getDisplayName());
+            System.out.println("HostName: " + net.getNetworkInterface().getInetAddresses().nextElement().getHostName());
+            System.out.println("CanonicalHastName: " + net.getNetworkInterface().getInetAddresses().nextElement().getCanonicalHostName());
+            System.out.println("HostAddress: " + net.getNetworkInterface().getInetAddresses().nextElement().getHostAddress());
+            System.out.println("InterfaceAddresses: " + net.getNetworkInterface().getInterfaceAddresses());
+            System.out.println("NetworkInterface Name: " + net.getNetworkInterface().getName());
 
-            puts();
+            System.out.println();
         }
 
         var os = si.getOperatingSystem();
 
-        puts("DnsServers: " + Arrays.asList(os.getNetworkParams().getDnsServers()));
-        puts("DomainName: " + os.getNetworkParams().getDomainName());
-        puts("HostName: " + os.getNetworkParams().getHostName());
-        puts("Ipv4DefaultGateway: " + os.getNetworkParams().getIpv4DefaultGateway());
-        puts("Ipv6DefaultGateway: " + os.getNetworkParams().getIpv6DefaultGateway());
+        System.out.println("DnsServers: " + Arrays.asList(os.getNetworkParams().getDnsServers()));
+        System.out.println("DomainName: " + os.getNetworkParams().getDomainName());
+        System.out.println("HostName: " + os.getNetworkParams().getHostName());
+        System.out.println("Ipv4DefaultGateway: " + os.getNetworkParams().getIpv4DefaultGateway());
+        System.out.println("Ipv6DefaultGateway: " + os.getNetworkParams().getIpv6DefaultGateway());
 
-        puts();
-    }
-
-    private static void puts(Object obj) {
-        System.out.println(obj);
-    }
-
-    private static void puts() {
         System.out.println();
     }
 }

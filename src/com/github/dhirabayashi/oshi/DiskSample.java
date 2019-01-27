@@ -4,32 +4,24 @@ import oshi.SystemInfo;
 
 public class DiskSample {
     public static void main(String[] args) {
-        SystemInfo si = new SystemInfo();
+        var si = new SystemInfo();
         var hard = si.getHardware();
         var disks = hard.getDiskStores();
         for(var disk : disks) {
-            puts("Model: " + disk.getModel());
-            puts("Name: " + disk.getName());
-            puts("Serial: " + disk.getSerial());
+            System.out.println("Model: " + disk.getModel());
+            System.out.println("Name: " + disk.getName());
+            System.out.println("Serial: " + disk.getSerial());
 
             var partition = disk.getPartitions();
 
             for(var part : partition) {
-                puts("Identification: " + part.getIdentification());
-                puts("MountPoint: " + part.getMountPoint());
-                puts("Name: " + part.getName());
-                puts("Type: " + part.getType());
-                puts("Uuid" + part.getUuid());
+                System.out.println("Identification: " + part.getIdentification());
+                System.out.println("MountPoint: " + part.getMountPoint());
+                System.out.println("Name: " + part.getName());
+                System.out.println("Type: " + part.getType());
+                System.out.println("Uuid" + part.getUuid());
             }
-            puts();
+            System.out.println();
         }
-    }
-
-    private static void puts(Object obj) {
-        System.out.println(obj);
-    }
-
-    private static void puts() {
-        System.out.println();
     }
 }

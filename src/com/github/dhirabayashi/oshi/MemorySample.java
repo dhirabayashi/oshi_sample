@@ -4,23 +4,15 @@ import oshi.SystemInfo;
 
 public class MemorySample {
     public static void main(String[] args) {
-        SystemInfo si = new SystemInfo();
+        var si = new SystemInfo();
         var hard = si.getHardware();
         var memory = hard.getMemory();
-        puts("SwapTotal: " + memory.getSwapTotal());
-        puts("Total: " + memory.getTotal());
-        puts("SwapUsed: " + memory.getSwapUsed());
-        puts("SwapPagesOut: " + memory.getSwapPagesOut());
-        puts("SwapPagesIn: " + memory.getSwapPagesIn());
-        puts("PageSize: " + memory.getPageSize());
-        puts("Available: " + memory.getAvailable());
-    }
-
-    private static void puts(Object obj) {
-        System.out.println(obj);
-    }
-
-    private static void puts() {
-        System.out.println();
+        System.out.println("SwapTotal: " + memory.getSwapTotal());
+        System.out.println("Total: " + memory.getTotal());
+        System.out.println("SwapUsed: " + memory.getSwapUsed());
+        System.out.println("SwapPagesOut: " + memory.getSwapPagesOut());
+        System.out.println("SwapPagesIn: " + memory.getSwapPagesIn());
+        System.out.println("PageSize: " + memory.getPageSize());
+        System.out.println("Available: " + memory.getAvailable());
     }
 }

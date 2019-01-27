@@ -4,25 +4,19 @@ import oshi.SystemInfo;
 
 public class CPUSample {
     public static void main(String[] args) {
-        SystemInfo si = new SystemInfo();
+        var si = new SystemInfo();
         var hard = si.getHardware();
         var cpu = hard.getProcessor();
-        puts("PhysicalProccessorCount: " + cpu.getPhysicalProcessorCount());
-        puts("LogicalProcessorCount: " + cpu.getLogicalProcessorCount());
-        puts("Model: " + cpu.getModel());
-        puts("Name: " + cpu.getName());
-        puts("Identifier: " + cpu.getIdentifier());
-        puts("ProcessorID: " + cpu.getProcessorID());
-        puts("Stepping: " + cpu.getStepping());
-        puts("Vendor: " + cpu.getVendor());
-        puts("VendorFreq: " + cpu.getVendorFreq());
-    }
-
-    private static void puts(Object obj) {
-        System.out.println(obj);
-    }
-
-    private static void puts() {
-        System.out.println();
+        System.out.println("PhysicalProccessorCount: " + cpu.getPhysicalProcessorCount());
+        System.out.println("LogicalProcessorCount: " + cpu.getLogicalProcessorCount());
+        System.out.println("Model: " + cpu.getModel());
+        System.out.println("Name: " + cpu.getName());
+        System.out.println("Identifier: " + cpu.getIdentifier());
+        System.out.println("ProcessorID: " + cpu.getProcessorID());
+        System.out.println("Stepping: " + cpu.getStepping());
+        System.out.println("Vendor: " + cpu.getVendor());
+        System.out.println("VendorFreq: " + cpu.getVendorFreq());
+        System.out.println("ContextSwitches: " + cpu.getContextSwitches());
+        System.out.println("SystemLoadAverage: " + cpu.getSystemLoadAverage());
     }
 }

@@ -4,27 +4,19 @@ import oshi.SystemInfo;
 
 public class FileSystemSample {
     public static void main(String[] args) {
-        SystemInfo si = new SystemInfo();
+        var si = new SystemInfo();
         var os = si.getOperatingSystem();
         var fs = os.getFileSystem();
         for(var fsStore : fs.getFileStores()) {
-            puts("Description: " + fsStore.getDescription());
-            puts("LogicalVolume: " + fsStore.getLogicalVolume());
-            puts("Mount: " + fsStore.getMount());
-            puts("Name: " + fsStore.getName());
-            puts("Type: " + fsStore.getType());
-            puts("UUID: " + fsStore.getUUID());
-            puts("Volume: " + fsStore.getVolume());
+            System.out.println("Description: " + fsStore.getDescription());
+            System.out.println("LogicalVolume: " + fsStore.getLogicalVolume());
+            System.out.println("Mount: " + fsStore.getMount());
+            System.out.println("Name: " + fsStore.getName());
+            System.out.println("Type: " + fsStore.getType());
+            System.out.println("UUID: " + fsStore.getUUID());
+            System.out.println("Volume: " + fsStore.getVolume());
 
-            puts();
+            System.out.println();
         }
-    }
-
-    private static void puts(Object obj) {
-        System.out.println(obj);
-    }
-
-    private static void puts() {
-        System.out.println();
     }
 }

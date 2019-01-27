@@ -6,8 +6,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.github.oshi', name: 'oshi-core', version: '3.10.0'
-
+    compile group: 'com.github.oshi', name: 'oshi-core', version: '3.13.0'
 }
 
 wrapper {

@@ -11,26 +11,18 @@ public class ProcessSample {
         OSProcess[] procs = os.getProcesses(Integer.MAX_VALUE, OperatingSystem.ProcessSort.PID);
         for(var proc : procs) {
             if(proc.getName().startsWith("java")) {
-                puts("CommandLine: " + proc.getCommandLine());
-                puts("Name: " + proc.getName());
-                puts("CurrentWorkingDirectory: " + proc.getCurrentWorkingDirectory());
-                puts("Group: " + proc.getGroup());
-                puts("GroupID: " + proc.getGroupID());
-                puts("Path: " + proc.getPath());
-                puts("State: " + proc.getState());
-                puts("User: " + proc.getUser());
-                puts("UserID: " + proc.getUserID());
+                System.out.println("CommandLine: " + proc.getCommandLine());
+                System.out.println("Name: " + proc.getName());
+                System.out.println("CurrentWorkingDirectory: " + proc.getCurrentWorkingDirectory());
+                System.out.println("Group: " + proc.getGroup());
+                System.out.println("GroupID: " + proc.getGroupID());
+                System.out.println("Path: " + proc.getPath());
+                System.out.println("State: " + proc.getState());
+                System.out.println("User: " + proc.getUser());
+                System.out.println("UserID: " + proc.getUserID());
 
-                puts();
+                System.out.println();
             }
         }
-    }
-
-    private static void puts(Object obj) {
-        System.out.println(obj);
-    }
-
-    private static void puts() {
-        System.out.println();
     }
 }
